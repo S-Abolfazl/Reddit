@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       appBar: AppBar(
 
-        leading: Icon(Icons.clear),
+        leading: Icon(Icons.pending),
         backgroundColor: Colors.black38,
         title : Container(
           width: 300,
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.article    ),
+                  icon: Icon(Icons.clear),
                   onPressed: () {
                     /* Clear the search field */
                   },
