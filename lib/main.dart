@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.yellow,
       ),
       home: const MyHomePage(title: 'Reddit'),
     );
@@ -91,13 +90,50 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
 
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Text(
-          "Hi"
-        ),
+      body: Column(
+        children: [
+        ],
       ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.lightGreen,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.compass_calibration_sharp,
+                color: Colors.lightGreen,
+              ),
+              label: 'Compass',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add,
+                color: Colors.lightGreen,
+              ),
+              label: 'Add',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.maps_ugc_sharp,
+                color: Colors.lightGreen,
+              ),
+              label: 'Maps',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_alert_sharp,
+                color: Colors.lightGreen,
+              ),
+              label: 'Alert',
+            )
+          ],
+
+        ),
     );
   }
 }
