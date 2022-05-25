@@ -38,11 +38,17 @@ class MyHomePage extends StatefulWidget {
   //MaterialColor Color = Colors.red;
   //TextStyle textStyle = textStyle.merge(Alignment.center);
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState(0);
+
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  int SelectedPage;
+  final double iconSize = 30;
+
+  _MyHomePageState(this.SelectedPage);
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -118,12 +124,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
       body: Container(
-        alignment: Alignment.center,
-        child: Column(
-
+        //alignment: Alignment.center,
+        child: Container(
+          child:Column(
+                    children: [
+                      Container(
+                        child : IconButton(
+                          icon: Icon(
+                            Icons.person_pin,
+                            color: Colors.black,
+                          ),
+                        )
+                      )
+                    ],
+          )
         ),
 
-
+        alignment: Alignment.center,
       decoration: BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -148,43 +165,53 @@ class _MyHomePageState extends State<MyHomePage> {
           items:[
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                SelectedPage==0?Icons.home:
+                Icons.home_outlined,
+                textDirection:,
                 color: Colors.lightGreen,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.compass_calibration_sharp,
+                SelectedPage==1? Icons.star:Icons.star_border,
                 color: Colors.lightGreen,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: Icon(SelectedPage==2?Icons.add_circle:
                 Icons.add,
                 color: Colors.lightGreen,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: Icon(SelectedPage==3?Icons.maps_ugc:
                 Icons.maps_ugc_sharp,
                 color: Colors.lightGreen,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_alert_sharp,
+              icon: Icon(SelectedPage==4?Icons.add_alert:
+                Icons.add_alert_outlined,
+                //InkWell(child: CircleAvatar(backgroundColor: Colors.black,radius:iconSize/2),),
                 color: Colors.lightGreen,
               ),
               label: '',
             )
+
           ],
         )
 
         ),
     );
   }
+
+void onTap(int index){
+    setState(() {
+      SelectedPage = index;
+    });
+}
 }
