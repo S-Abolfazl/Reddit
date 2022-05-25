@@ -124,22 +124,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
       body: Container(
-        //alignment: Alignment.center,
-        child: Container(
-          child:Column(
-                    children: [
-                      Container(
-                        child : IconButton(
-                          icon: Icon(
-                            Icons.person_pin,
-                            color: Colors.black,
-                          ),
-                        )
-                      )
-                    ],
-          )
+        child : ListView(
+          children: <Widget>[
+            ]
         ),
-
+        //alignment: Alignment.center,
         alignment: Alignment.center,
       decoration: BoxDecoration(
       gradient: LinearGradient(
@@ -167,7 +156,6 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(
                 SelectedPage==0?Icons.home:
                 Icons.home_outlined,
-                textDirection:,
                 color: Colors.lightGreen,
               ),
               label: '',
